@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devjobs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+    <header>
+        <div class="wrapper">
+            <nav>
+                <div class="logo">
+                   <img src="./assets/desktop/logo.svg" alt="devjobs logo">  
+                </div>
+
+                <div class="toggle">
+
+                    <div>
+                        <img src="./assets/desktop/icon-sun.svg" alt="sun icon">
+                    </div>
+                    
+                    <div>
+                        <label class="switch">
+                            <input id="checkbox" type="checkbox" onclick="darkMode()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <img src="./assets/desktop/icon-moon.svg" alt="moon icon">
+                    </div>
+
+                </div>
+            </nav>
+
+            <form id="">
+                <div class="filter">
+                    <div class="search bor">
+                        <input type="text" id="fil-search" onkeyup="search()" name="" placeholder="Filter by title, companies, expertise…">
+                    </div>
+                    <div class="bor">
+                        <input type="text" id="fil-location" name="" placeholder="Filter by location…">
+                    </div>
+                    <div class="full-time">
+                        <input type="checkbox" id="full-check" name="" value="">
+                        <label for="full-check">Full Time Only</label>
+                    </div>
+                    <div>
+                        <input value="Search" type="submit" class="button btn-1">
+                    </div>
+                </div>
+            </form>
+
+            <!-- End of desktop header-->
+
+
+
+            
+                <!-- Mobile search bar-->
+            <form id="mobile-form" action="">
+
+                <div class="mobile-search">
+                    <input type="text" id="fil-mobile" placeholder="Filter by title...">
+                    <img src="./assets/mobile/icon-filter.svg" alt="" class="menu-fil-icon">
+                    <input value="" type="submit" class="mobile-btn" id="mobile-btn">
+                </div>
+            </form>
+
+            <!--Mobile menu container-->
+
+            <div class="mobile-menu-container">
+                <form action="" class="menu-form">
+                    <div>
+                        <input type="text" id="mobile-location" placeholder="Filter by location...">
+                    </div>
+                    
+                    
+                    <div class="mobile-chk">
+                        <input type="checkbox" id="mobile-check"> 
+                        <label for="mobile-check">Full Time Only</label>
+                    </div>
+                    
+    
+                    <div>
+                        <input type="submit" value="Search" class="button mb-btn">
+                    </div>
+                </form>
+        
+            </div>
+            
+        </div>
+    </header>
+    
+    <!-- Job listing -->
+
+    <main>
+
+        <div class="wrapper">
+
+            <div class="jobs" id="jobs">
+
+                <!-- Contains jobs and details from data.json-->
+            
+            </div>
+
+            <div>
+                <button class="button btn-2">Load More</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+</html>
