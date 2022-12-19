@@ -44,7 +44,7 @@
             <form id="">
                 <div class="filter">
                     <div class="search bor">
-                        <input type="text" id="fil-search" onkeyup="search()" name="" placeholder="Filter by title, companies, expertise…">
+                        <input type="search" id="fil-search" name="" onkeyup="search()" placeholder="Filter by title, companies, expertise…">
                     </div>
                     <div class="bor">
                         <input type="text" id="fil-location" name="" placeholder="Filter by location…">
@@ -54,7 +54,7 @@
                         <label for="full-check">Full Time Only</label>
                     </div>
                     <div>
-                        <input value="Search" type="submit" class="button btn-1">
+                        <input value="Search" type="submit" class="button btn-1" onclick="deskJobSearch()">
                     </div>
                 </div>
             </form>
@@ -90,7 +90,7 @@
                     
     
                     <div>
-                        <input type="submit" value="Search" class="button mb-btn">
+                        <input type="submit" value="Search" class="button mb-btn" onclick="mobileJobSearch()">
                     </div>
                 </form>
         
@@ -117,6 +117,9 @@
 
         </div>
     </main>
+
+    
+
 
     <script src="./main.js"></script>
 </body>

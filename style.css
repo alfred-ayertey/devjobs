@@ -52,7 +52,7 @@ body {
     max-width: 1440px;
     max-height: 1620px;
     margin: 0 auto;
-}
+}  
 
 nav {
     background-image: url(./assets/desktop/bg-pattern-header.svg);
@@ -194,6 +194,10 @@ input:checked + .slider:before {
     display: none;
 }
 
+.mobile-menu-container {
+    display: none;
+}
+
 .full-time {
     color: var(--prime-mode-3);
     width: 148px;
@@ -278,16 +282,16 @@ input:checked + .slider:before {
     margin: 50px 10px 10px 25px;
 }
 
-.scoot-sub {
+.scoot-sub, .officelite-sub, .pod-sub, .creative-sub, .pomodoro-sub, .coffeeroasters-sub, .mastercraft-sub {
     margin-left: 40px;
     margin-top: 15px;
 }
 
-.scoot-sub > h2 {
+.scoot-sub > h2, .officelite-sub > h2, .pod-sub > h2, .creative-sub > h2, .pomodoro-sub > h2, .coffeeroasters-sub > h2, .mastercraft-sub > h2 {
     color: var(--prime-mode-3);
 }
 
-.scoot-sub > p {
+.scoot-sub > p, .officelite-sub > p, .pod-sub > p, .creative-sub > p, .pomodoro-sub > p, .coffeeroasters-sub > p, .mastercraft-sub > p {
     color: var(--dark-grey);
 }
 
@@ -339,7 +343,6 @@ input:checked + .slider:before {
 }
 
 .sct-article{
-    width: 639px;
     line-height: 30px;
     padding-top: 10px;
 }
@@ -388,6 +391,10 @@ footer {
         display: none;
     }
 
+    .mobile-menu-container {
+        display: none;
+    }
+
     .filter {
         width: 689px;
     }
@@ -421,7 +428,7 @@ footer {
     }
 
     footer {
-        width: 768px;
+        width: 100%;
     }
 
 }
@@ -572,4 +579,131 @@ footer {
         width: 279px;
     }
 
+    .scoot-navbar {
+        flex-direction: column;
+        width: 327px;
+        height: 205px;
+        margin-top: -20px;
+        padding-bottom: 40px;
+        border-radius: 10px;
+    }
+
+    .scoot-box {
+        flex-direction: column;
+    }
+
+    .scoot-img {
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin-left: 130px;
+        margin-top: -25px;
+        border-radius: 15px;
+    } 
+
+    .scoot-img > img {
+        width: 30px;
+        height: 11px;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+
+    .scoot-sub {
+        margin-left: 125px;
+        margin-top: -10px;
+    }
+
+    .officelite-sub {
+        margin-left: 100px;
+        margin-top: -10px;
+    }
+
+    .pod-sub {
+        margin-left: 135px;
+        margin-top: -10px;
+    }
+
+    .pod-sub > p {
+        margin-left: -10px;
+    }
+
+    .creative-sub {
+        margin-left: 110px;
+        margin-top: -10px;
+    }
+
+    .pomodoro-sub {
+        margin-left: 110px;
+        margin-top: -10px;
+    }
+
+    .coffeeroasters-sub {
+        margin-left: 90px;
+        margin-top: -10px;
+    }
+
+    .mastercraft-sub {
+        margin-left: 95px;
+        margin-top: -10px;
+    }
+
+
+    .button-wht {
+        margin-left: 100px;
+        margin-top: 10px;
+    }
+
+    .sct-details, .blogr-details, .vector-details, .officelite-details, .pod-details, .creative-details, .pomodoro-details, .maker-details, .coffeeroasters-details, .mastercraft-details, .crowdfund-details, .typemaster-details {
+        width: 327px;
+        height: 2421px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .sct-details::-webkit-scrollbar, .blogr-details::-webkit-scrollbar, .vector-details::-webkit-scrollbar, .officelite-details::-webkit-scrollbar, .pod-details::-webkit-scrollbar, .creative-details::-webkit-scrollbar, .pomodoro-details::-webkit-scrollbar, .maker-details::-webkit-scrollbar, .coffeeroasters-details::-webkit-scrollbar, .mastercraft-details::-webkit-scrollbar, .crowdfund-details::-webkit-scrollbar, .typemaster-details::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sct-article-head {
+        flex-direction: column;
+        margin-left: -200px;
+        margin-top: -50px;
+        padding-top: 30px;
+    }
+
+    #sct-article-head-sub {
+        margin-left: -50px;
+    }
+
+    #sct-article-head-pomo {
+        margin-left: -150px;
+    }
+
+    #sct-article-head-maker {
+        margin-left: -100px;
+    }
+
+    #sct-article-head-fund {
+        margin-left: -110px;
+    }
+
+    .sct-apply {
+        width: 279px;
+        height: 48px;
+        margin-top: 30px;
+        margin-left: -10px;
+
+    }
+
+    .docu-body {
+        margin-top: 80px;
+        margin-left: -25px;
+        padding-top: 60px;
+    }
+
+    .sub-footer {
+        display: none;
+    }
 }

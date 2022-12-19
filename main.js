@@ -1,3 +1,5 @@
+// DarkMode Script
+
 let darkMode = localStorage.getItem("darkMode");
 const check = document.getElementById("checkbox");
 
@@ -32,17 +34,6 @@ check.addEventListener("click", () => {
 
 
 
-const menuIcon = document.querySelector(".menu-fil-icon");
-const mobileMenuContainer = document.querySelector(".mobile-menu-container");
-
-
-menuIcon.addEventListener("click", () => {
-    mobileMenuContainer.classList.add("active");
-});
-
-
-
-
 
 
 let jobsOffers = "";
@@ -58,7 +49,7 @@ fetch('data.json')
                 </div>
                 <div class="job-name" id="job-name">
                     <p>${element.postedAt} . ${element.contract} </p>
-                    <h3 id="job-title"><a href=""> ${element.position} </a></h3>
+                    <h3 id="job-title"><a href="${element.link}"> ${element.position} </a></h3>
                     <p> ${element.company} </p> 
                 </div>
                 <div class="job-location" id="job-location">
@@ -72,23 +63,155 @@ fetch('data.json')
 });
 
 
-function search() {
-   var input = document.getElementById("fil-search");
-   var filter = input.value.toUpperCase();
-   
-   var jobName = document.getElementById("job-name");
-   var h3 = document.getElementsByTagName("h3");
 
-   for (var i = 0; i < h3.length; i++) {
-    var a = h3[i].getElementsByTagName("a")[0];
-    var txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        h3[i].style.display = "";
-    } else {
-        h3[i].style.display = "none";
+    function deskJobSearch() {
+        let inputS = document.getElementById("fil-search");
+        let inputL = document.getElementById("fil-location");
+
+        let valueSearch = inputS.value.toUpperCase();
+        let valueLocation = inputL.value.toUpperCase();
+
+        if (valueLocation === "UNITED KINGDOM") {
+            if (valueSearch === "SENIOR SOFTWARE ENGINEER")  {
+                window.open("/scoot.html");
+            }
+
+            else if (valueSearch === "SENIOR EJB DEVELOPER") {
+                window.open("/maker.html");
+            }
+
+            else if (valueSearch === "TECHNICAL LEAD ENGINEER") {
+                window.open("/typemaster.html");
+            }
+        }
+
+        else if (valueLocation === "UNITED STATES") {
+            if (valueSearch === "HASKELL AND PURESCRIPT DEV")  {
+                window.open("/blogr.html");
+            }
+
+            else if (valueSearch === "IOS ENGINEER")  {
+                window.open("/pomodoro.html");
+            }
+
+            else if (valueSearch === "APP & WEBSITE DESIGNER")  {
+                window.open("/mastercraft.html");
+            }
+        }
+
+        else if (valueLocation === "JAPAN") {
+            if (valueSearch === "SENIOR APPLICATION ENGINEER") {
+                window.open("/officelite.html");
+            }
+        }
+
+        else if (valueLocation === "RUSSIA") {
+            if (valueSearch === "MIDLEVEL BACK END ENGINEER") {
+                window.open("/vector.html");
+            }
+        }
+
+
+        else if (valueLocation === "THAILAND") {
+            if (valueSearch === "REMOTE DEVOPS ENGINEER") {
+                window.open("/pod.html");
+            }
+        }
+
+        else if (valueLocation === "GERMANY") {
+            if (valueSearch === "DESKTOP SUPPORT MANAGER") {
+                window.open("/creative.html");
+            }
+        }
+
+        else if (valueLocation === "SINGAPORE") {
+            if (valueSearch === "SENIOR FRONTEND DEVELOPER") {
+                window.open("/coffeeroasters.html");
+            }
+        }
+
+        else if (valueLocation === "NEW ZEALAND") {
+            if (valueSearch === "FULLSTACK DEVELOPER") {
+                window.open("/crowdfund.html");
+            }
+        }
     }
-}
-}
+
+
+    function mobileJobSearch() {
+        let inputS = document.getElementById("fil-mobile");
+        let inputL = document.getElementById("mobile-location");
+
+        let valueSearch = inputS.value.toUpperCase();
+        let valueLocation = inputL.value.toUpperCase();
+
+        if (valueLocation === "UNITED KINGDOM") {
+            if (valueSearch === "SENIOR SOFTWARE ENGINEER")  {
+                window.open("/scoot.html");
+            }
+
+            else if (valueSearch === "SENIOR EJB DEVELOPER") {
+                window.open("/maker.html");
+            }
+
+            else if (valueSearch === "TECHNICAL LEAD ENGINEER") {
+                window.open("/typemaster.html");
+            }
+        }
+
+        else if (valueLocation === "UNITED STATES") {
+            if (valueSearch === "HASKELL AND PURESCRIPT DEV")  {
+                window.open("/blogr.html");
+            }
+
+            else if (valueSearch === "IOS ENGINEER")  {
+                window.open("/pomodoro.html");
+            }
+
+            else if (valueSearch === "APP & WEBSITE DESIGNER")  {
+                window.open("/mastercraft.html");
+            }
+        }
+
+        else if (valueLocation === "JAPAN") {
+            if (valueSearch === "SENIOR APPLICATION ENGINEER") {
+                window.open("/officelite.html");
+            }
+        }
+
+        else if (valueLocation === "RUSSIA") {
+            if (valueSearch === "MIDLEVEL BACK END ENGINEER") {
+                window.open("/vector.html");
+            }
+        }
+
+
+        else if (valueLocation === "THAILAND") {
+            if (valueSearch === "REMOTE DEVOPS ENGINEER") {
+                window.open("/pod.html");
+            }
+        }
+
+        else if (valueLocation === "GERMANY") {
+            if (valueSearch === "DESKTOP SUPPORT MANAGER") {
+                window.open("/creative.html");
+            }
+        }
+
+        else if (valueLocation === "SINGAPORE") {
+            if (valueSearch === "SENIOR FRONTEND DEVELOPER") {
+                window.open("/coffeeroasters.html");
+            }
+        }
+
+        else if (valueLocation === "NEW ZEALAND") {
+            if (valueSearch === "FULLSTACK DEVELOPER") {
+                window.open("/crowdfund.html");
+            }
+        }
+    }
+
+
 
 
 
@@ -109,7 +232,7 @@ fetch('data.json')
     <div class="scoot-navbar">
         <div class="scoot-box">
             <div class="scoot-img" style="background-color: ${json[0].logoBackground}">
-                <img src=" ${json[0].icon} " alt="scoot icon" >
+                <img src=" ${json[0].icon} " alt="scoot icon">
             </div>
 
             <div class="scoot-sub">
@@ -129,9 +252,9 @@ fetch('data.json')
     let scootMain = "";
     scootMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[0].postedAt} . ${json[0].contract} </p>
-                <h2 id="sct-job-title"> ${json[0].position} </h2>
+                <h3 id="sct-job-title"> ${json[0].position} </h3>
                 <p id="sct-job-location"> ${json[0].location} </p>
             </div>
 
@@ -140,7 +263,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[0].description} </p>
             </article>
@@ -214,9 +337,9 @@ fetch('data.json')
     let blogrMain = "";
     blogrMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[1].postedAt} . ${json[1].contract} </p>
-                <h2 id="sct-job-title"> ${json[1].position} </h2>
+                <h3 id="sct-job-title"> ${json[1].position} </h3>
                 <p id="sct-job-location"> ${json[1].location} </p>
             </div>
 
@@ -225,7 +348,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[1].description} </p>
             </article>
@@ -301,9 +424,9 @@ fetch('data.json')
     let vectorMain = "";
     vectorMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[2].postedAt} . ${json[2].contract} </p>
-                <h2 id="sct-job-title"> ${json[2].position} </h2>
+                <h3 id="sct-job-title"> ${json[2].position} </h3>
                 <p id="sct-job-location"> ${json[2].location} </p>
             </div>
 
@@ -312,7 +435,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[2].description} </p>
             </article>
@@ -369,7 +492,7 @@ fetch('data.json')
                 <img src=" ${json[3].icon} " alt="blogr icon" >
             </div>
 
-            <div class="scoot-sub">
+            <div class="officelite-sub">
                 <h2> ${json[3].company} </h2>
                 <p>officelite.com</p>
             </div>
@@ -386,9 +509,9 @@ fetch('data.json')
     let officeLiteMain = "";
     officeLiteMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[3].postedAt} . ${json[3].contract} </p>
-                <h2 id="sct-job-title"> ${json[3].position} </h2>
+                <h3 id="sct-job-title"> ${json[3].position} </h3>
                 <p id="sct-job-location"> ${json[3].location} </p>
             </div>
 
@@ -397,7 +520,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[3].description} </p>
             </article>
@@ -455,7 +578,7 @@ fetch('data.json')
                 <img src=" ${json[4].icon} " alt="blogr icon" >
             </div>
 
-            <div class="scoot-sub">
+            <div class="pod-sub">
                 <h2> ${json[4].company} </h2>
                 <p>pod.com</p>
             </div>
@@ -472,9 +595,9 @@ fetch('data.json')
     let podMain = "";
     podMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[4].postedAt} . ${json[4].contract} </p>
-                <h2 id="sct-job-title"> ${json[4].position} </h2>
+                <h3 id="sct-job-title"> ${json[4].position} </h3>
                 <p id="sct-job-location"> ${json[4].location} </p>
             </div>
 
@@ -483,7 +606,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[4].description} </p>
             </article>
@@ -540,7 +663,7 @@ fetch('data.json')
                 <img src=" ${json[5].icon} " alt="blogr icon" >
             </div>
 
-            <div class="scoot-sub">
+            <div class="creative-sub">
                 <h2> ${json[5].company} </h2>
                 <p>creative.com</p>
             </div>
@@ -557,9 +680,9 @@ fetch('data.json')
     let creativeMain = "";
     creativeMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[5].postedAt} . ${json[5].contract} </p>
-                <h2 id="sct-job-title"> ${json[5].position} </h2>
+                <h3 id="sct-job-title"> ${json[5].position} </h3>
                 <p id="sct-job-location"> ${json[5].location} </p>
             </div>
 
@@ -568,7 +691,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[5].description} </p>
             </article>
@@ -627,7 +750,7 @@ fetch('data.json')
                 <img src=" ${json[6].icon} " alt="blogr icon" >
             </div>
 
-            <div class="scoot-sub">
+            <div class="pomodoro-sub">
                 <h2> ${json[6].company} </h2>
                 <p>pomodoro.com</p>
             </div>
@@ -644,9 +767,9 @@ fetch('data.json')
     let pomodoroMain = "";
     pomodoroMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-pomo">
                 <p id="sct-post"> ${json[6].postedAt} . ${json[6].contract} </p>
-                <h2 id="sct-job-title"> ${json[6].position} </h2>
+                <h3 id="sct-job-title"> ${json[6].position} </h3>
                 <p id="sct-job-location"> ${json[6].location} </p>
             </div>
 
@@ -655,7 +778,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[6].description} </p>
             </article>
@@ -731,9 +854,9 @@ fetch('data.json')
     let makerMain = "";
     makerMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-maker">
                 <p id="sct-post"> ${json[7].postedAt} . ${json[7].contract} </p>
-                <h2 id="sct-job-title"> ${json[7].position} </h2>
+                <h3 id="sct-job-title"> ${json[7].position} </h3>
                 <p id="sct-job-location"> ${json[7].location} </p>
             </div>
 
@@ -742,7 +865,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[7].description} </p>
             </article>
@@ -801,7 +924,7 @@ fetch('data.json')
                 <img src=" ${json[8].icon} " alt="blogr icon" >
             </div>
 
-            <div class="scoot-sub">
+            <div class="coffeeroasters-sub">
                 <h2> ${json[8].company} </h2>
                 <p>coffeeroasters.com</p>
             </div>
@@ -818,9 +941,9 @@ fetch('data.json')
     let coffeeroastersMain = "";
     coffeeroastersMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[8].postedAt} . ${json[8].contract} </p>
-                <h2 id="sct-job-title"> ${json[8].position} </h2>
+                <h3 id="sct-job-title"> ${json[8].position} </h3>
                 <p id="sct-job-location"> ${json[8].location} </p>
             </div>
 
@@ -829,7 +952,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[8].description} </p>
             </article>
@@ -887,7 +1010,7 @@ fetch('data.json')
                 <img src=" ${json[9].icon} " alt="blogr icon" >
             </div>
 
-            <div class="scoot-sub">
+            <div class="mastercraft-sub">
                 <h2> ${json[9].company} </h2>
                 <p>mastercraft.com</p>
             </div>
@@ -904,9 +1027,9 @@ fetch('data.json')
     let mastercraftMain = "";
     mastercraftMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[9].postedAt} . ${json[9].contract} </p>
-                <h2 id="sct-job-title"> ${json[9].position} </h2>
+                <h3 id="sct-job-title"> ${json[9].position} </h3>
                 <p id="sct-job-location"> ${json[9].location} </p>
             </div>
 
@@ -915,7 +1038,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[9].description} </p>
             </article>
@@ -975,7 +1098,7 @@ fetch('data.json')
                 <img src=" ${json[10].icon} " alt="blogr icon" >
             </div>
 
-            <div class="scoot-sub">
+            <div class="mastercraft-sub">
                 <h2> ${json[10].company} </h2>
                 <p>crowdfund.com</p>
             </div>
@@ -992,9 +1115,9 @@ fetch('data.json')
     let crowdfundMain = "";
     crowdfundMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-fund">
                 <p id="sct-post"> ${json[10].postedAt} . ${json[10].contract} </p>
-                <h2 id="sct-job-title"> ${json[10].position} </h2>
+                <h3 id="sct-job-title"> ${json[10].position} </h3>
                 <p id="sct-job-location"> ${json[10].location} </p>
             </div>
 
@@ -1003,7 +1126,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[10].description} </p>
             </article>
@@ -1062,7 +1185,7 @@ fetch('data.json')
                 <img src=" ${json[11].icon} " alt="blogr icon" >
             </div>
 
-            <div class="scoot-sub">
+            <div class="mastercraft-sub">
                 <h2> ${json[11].company} </h2>
                 <p>typemaster.com</p>
             </div>
@@ -1079,9 +1202,9 @@ fetch('data.json')
     let typemasterMain = "";
     typemasterMain += `
         <div class="sct-article-head">
-            <div>
+            <div id="sct-article-head-sub">
                 <p id="sct-post"> ${json[11].postedAt} . ${json[11].contract} </p>
-                <h2 id="sct-job-title"> ${json[11].position} </h2>
+                <h3 id="sct-job-title"> ${json[11].position} </h3>
                 <p id="sct-job-location"> ${json[11].location} </p>
             </div>
 
@@ -1090,7 +1213,7 @@ fetch('data.json')
             </div>
         </div>
 
-        <div>
+        <div class="docu-body">
             <article class="sct-article">
                 <p> ${json[11].description} </p>
             </article>
@@ -1130,3 +1253,18 @@ fetch('data.json')
     let typemasterFoot = json[11].position;
     document.getElementById("footer-sct-h").innerHTML = typemasterFoot;
 });
+
+
+
+
+// Mobile windom prompt menu
+
+let menuIcon = document.querySelector(".menu-fil-icon");
+let mobileMenuContainer = document.querySelector(".mobile-menu-container");
+
+
+menuIcon.addEventListener("click", () => {
+    mobileMenuContainer.classList.add("active");
+});
+
+
