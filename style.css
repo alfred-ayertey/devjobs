@@ -538,16 +538,21 @@ footer {
         grid-template-columns: auto;
     }
 
-    .job-card {
-        width: 300px;
-        height: 253px;
+    .job-card-1, .job-card-2, .job-card-3, .job-card-4, .job-card-5, .job-card-6, .job-card-7, .job-card-8, .job-card-9, .job-card-10, .job-card-11, .job-card-12, .job-card-13, .job-card-14, .job-card-15 { 
+        width: 320px;
         margin-right: 24px;
         margin-left: 28px;
+        margin-top: -40px;
+    }
+
+    .load-btn {
+        padding-bottom: 5px;
     }
 
     .btn-2 {
-        margin-top: -90px;
+        margin-top: -50px;
         margin-left: 100px;
+
     }
 
     .mobile-menu-container {
