@@ -91,7 +91,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[0].website}';"> Company Site </button>
         </div>
     </div>
     `    
@@ -176,7 +176,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[1].website}';"> Company Site </button>
         </div>
     </div>
     `    
@@ -263,7 +263,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[2].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -348,7 +348,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[3].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -434,7 +434,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[4].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -519,7 +519,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[5].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -595,7 +595,7 @@ fetch('data.json')
     pomodoroNav += `
     <div class="scoot-navbar">
         <div class="scoot-box">
-            <div class="scoot-img" style="background-color: ${json[5].logoBackground}">
+            <div class="scoot-img" style="background-color: ${json[6].logoBackground}">
                 <img src=" ${json[6].icon} " alt="blogr icon" >
             </div>
 
@@ -606,7 +606,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[6].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -693,7 +693,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[7].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -780,7 +780,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[8].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -866,7 +866,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[9].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -954,7 +954,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[10].website}';">Company Site</button>
         </div>
     </div>
     `    
@@ -1041,7 +1041,7 @@ fetch('data.json')
         </div>
 
         <div>
-            <button class="button-wht">Company Site</button>
+            <button class="button-wht" onclick="location.href='${json[11].website}';">Company Site</button>
         </div>
     </div>
     `    
