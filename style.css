@@ -152,7 +152,9 @@ input:checked + .slider:before {
     background-color: var(--light-violet);
 }
 
+
 .btn-2 {
+    display: block;
     align-items: center;
     margin-bottom: 60px;
     margin-left: 650px;
@@ -177,6 +179,7 @@ input:checked + .slider:before {
     border: none;
     color: var(--prime-mode-3);
     background-color: var(--prime-mode-2);
+    outline: none;
 }
 
 #fil-location {
@@ -188,6 +191,7 @@ input:checked + .slider:before {
     border: none;
     color: var(--prime-mode-3);
     background-color: var(--prime-mode-2);
+    outline: none;
 }
 
 #mobile-form {
@@ -215,12 +219,27 @@ input:checked + .slider:before {
     column-gap: 30px;
 }
 
-.job-card {
+
+.job-card-1, .job-card-2, .job-card-3, .job-card-4, .job-card-5, .job-card-6, .job-card-7, .job-card-8, .job-card-9, .job-card-10, .job-card-11, .job-card-12, .job-card-13, .job-card-14, .job-card-15 {
     background-color: var(--prime-mode-2);
     max-width: 350px;
     height: 228px;
     border-radius: 6px;
 }
+
+.job-card-1:hover, .job-card-2:hover, .job-card-3:hover, .job-card-4:hover, .job-card-5:hover, .job-card-6:hover, .job-card-7:hover, .job-card-8:hover, .job-card-9:hover, .job-card-10:hover, .job-card-11:hover, .job-card-12:hover, .job-card-13:hover, .job-card-14:hover, .job-card-15:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.job-card-13, .job-card-14, .job-card-15 {
+    display: none;
+}
+
+.job-card-13.show, .job-card-14.show, .job-card-15.show {
+    display: block;
+}
+
+
 
 .job-logo {
     margin-top: -20px;
@@ -364,6 +383,8 @@ footer {
 }
 
 
+
+
 /* Tablet Screen */
 
 @media (max-width: 1100px) {
@@ -488,6 +509,7 @@ footer {
         border-style: none;
         background-color: var(--prime-mode-2);
         color: var(--prime-mode-3);
+        outline: none;
     }
 
     .menu-fil-icon {
@@ -574,6 +596,7 @@ footer {
         height: 80px;
         background-color: var(--prime-mode-2);
         color: var(--prime-mode-3);
+        outline: none;
     }
 
     .mb-btn {

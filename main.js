@@ -37,13 +37,13 @@ check.addEventListener("click", () => {
 
 
 let jobsOffers = "";
-
+let num = 0;
 fetch('data.json')
 .then(Response => Response.json())
 .then(json => {
     json.forEach(element => {
     jobsOffers +=  `
-            <div class="job-card">
+            <div class="job-card-${num+=1}" onclick="location.href='${element.link}';" style="cursor:pointer">
                 <div class="job-logo">
                     <img src=" ${element.logo} ">
                 </div>
@@ -59,163 +59,12 @@ fetch('data.json')
             `
     });
     document.querySelector(".jobs").innerHTML = jobsOffers;
-    consolevar.log(json);
+
 });
 
-
-
-    function deskJobSearch() {
-        let inputS = document.getElementById("fil-search");
-        let inputL = document.getElementById("fil-location");
-
-        let valueSearch = inputS.value.toUpperCase();
-        let valueLocation = inputL.value.toUpperCase();
-
-        if (valueLocation === "UNITED KINGDOM") {
-            if (valueSearch === "SENIOR SOFTWARE ENGINEER")  {
-                window.open("/scoot.html");
-            }
-
-            else if (valueSearch === "SENIOR EJB DEVELOPER") {
-                window.open("/maker.html");
-            }
-
-            else if (valueSearch === "TECHNICAL LEAD ENGINEER") {
-                window.open("/typemaster.html");
-            }
-        }
-
-        else if (valueLocation === "UNITED STATES") {
-            if (valueSearch === "HASKELL AND PURESCRIPT DEV")  {
-                window.open("/blogr.html");
-            }
-
-            else if (valueSearch === "IOS ENGINEER")  {
-                window.open("/pomodoro.html");
-            }
-
-            else if (valueSearch === "APP & WEBSITE DESIGNER")  {
-                window.open("/mastercraft.html");
-            }
-        }
-
-        else if (valueLocation === "JAPAN") {
-            if (valueSearch === "SENIOR APPLICATION ENGINEER") {
-                window.open("/officelite.html");
-            }
-        }
-
-        else if (valueLocation === "RUSSIA") {
-            if (valueSearch === "MIDLEVEL BACK END ENGINEER") {
-                window.open("/vector.html");
-            }
-        }
-
-
-        else if (valueLocation === "THAILAND") {
-            if (valueSearch === "REMOTE DEVOPS ENGINEER") {
-                window.open("/pod.html");
-            }
-        }
-
-        else if (valueLocation === "GERMANY") {
-            if (valueSearch === "DESKTOP SUPPORT MANAGER") {
-                window.open("/creative.html");
-            }
-        }
-
-        else if (valueLocation === "SINGAPORE") {
-            if (valueSearch === "SENIOR FRONTEND DEVELOPER") {
-                window.open("/coffeeroasters.html");
-            }
-        }
-
-        else if (valueLocation === "NEW ZEALAND") {
-            if (valueSearch === "FULLSTACK DEVELOPER") {
-                window.open("/crowdfund.html");
-            }
-        }
-    }
-
-
-    function mobileJobSearch() {
-        let inputS = document.getElementById("fil-mobile");
-        let inputL = document.getElementById("mobile-location");
-
-        let valueSearch = inputS.value.toUpperCase();
-        let valueLocation = inputL.value.toUpperCase();
-
-        if (valueLocation === "UNITED KINGDOM") {
-            if (valueSearch === "SENIOR SOFTWARE ENGINEER")  {
-                window.open("/scoot.html");
-            }
-
-            else if (valueSearch === "SENIOR EJB DEVELOPER") {
-                window.open("/maker.html");
-            }
-
-            else if (valueSearch === "TECHNICAL LEAD ENGINEER") {
-                window.open("/typemaster.html");
-            }
-        }
-
-        else if (valueLocation === "UNITED STATES") {
-            if (valueSearch === "HASKELL AND PURESCRIPT DEV")  {
-                window.open("/blogr.html");
-            }
-
-            else if (valueSearch === "IOS ENGINEER")  {
-                window.open("/pomodoro.html");
-            }
-
-            else if (valueSearch === "APP & WEBSITE DESIGNER")  {
-                window.open("/mastercraft.html");
-            }
-        }
-
-        else if (valueLocation === "JAPAN") {
-            if (valueSearch === "SENIOR APPLICATION ENGINEER") {
-                window.open("/officelite.html");
-            }
-        }
-
-        else if (valueLocation === "RUSSIA") {
-            if (valueSearch === "MIDLEVEL BACK END ENGINEER") {
-                window.open("/vector.html");
-            }
-        }
-
-
-        else if (valueLocation === "THAILAND") {
-            if (valueSearch === "REMOTE DEVOPS ENGINEER") {
-                window.open("/pod.html");
-            }
-        }
-
-        else if (valueLocation === "GERMANY") {
-            if (valueSearch === "DESKTOP SUPPORT MANAGER") {
-                window.open("/creative.html");
-            }
-        }
-
-        else if (valueLocation === "SINGAPORE") {
-            if (valueSearch === "SENIOR FRONTEND DEVELOPER") {
-                window.open("/coffeeroasters.html");
-            }
-        }
-
-        else if (valueLocation === "NEW ZEALAND") {
-            if (valueSearch === "FULLSTACK DEVELOPER") {
-                window.open("/crowdfund.html");
-            }
-        }
-    }
-
-
-
-
-
 // End of home page script
+
+
 
 
 
@@ -259,7 +108,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[0].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -344,7 +193,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[1].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -431,7 +280,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[2].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -516,7 +365,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[3].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -602,7 +451,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[4].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -687,7 +536,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[5].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -774,7 +623,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[6].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -861,7 +710,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[7].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -948,7 +797,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[8].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -1034,7 +883,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[9].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -1122,7 +971,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[10].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -1209,7 +1058,7 @@ fetch('data.json')
             </div>
 
             <div>
-                <button class="button sct-apply"> Apply Now </button>
+                <button class="button sct-apply" onclick="location.href='${json[11].apply}';"> Apply Now </button>
             </div>
         </div>
 
@@ -1257,14 +1106,182 @@ fetch('data.json')
 
 
 
+
+
+
+
+
 // Mobile windom prompt menu
 
 let menuIcon = document.querySelector(".menu-fil-icon");
 let mobileMenuContainer = document.querySelector(".mobile-menu-container");
 
-
 menuIcon.addEventListener("click", () => {
-    mobileMenuContainer.classList.add("active");
+    if (mobileMenuContainer.classList.contains('active')) {
+        mobileMenuContainer.classList.remove('active');
+    }
+    else {
+        mobileMenuContainer.classList.add("active");
+    }
+    
 });
+
+
+
+// Desktop Filter Search
+
+const deskSearchBar = document.querySelector('.btn-1');
+
+deskSearchBar.addEventListener("click", deskFilter);
+
+
+function deskFilter () {
+    let inputS = document.getElementById("fil-search");
+    let valueSearch = inputS.value.toUpperCase();
+
+
+    if ('SENIOR SOFTWARE ENGINEER'.includes(valueSearch)) {
+        window.open('/scoot.html')
+    }
+
+    else if ('SENIOR APPLICATION ENGINEER'.includes(valueSearch)) {
+        window.open("/officelite.html");
+    }
+
+    else if ('MIDLEVEL BACK END ENGINEER'.includes(valueSearch)) {
+        window.open("/vector.html");
+    }
+
+    else if ('REMOTE DEVOPS ENGINEER'.includes(valueSearch)) {
+        window.open("/pod.html");
+    }
+
+    else if ('DESKTOP SUPPORT MANAGER'.includes(valueSearch)) {
+        window.open("/creative.html");
+    }
+
+    else if ('SENIOR FRONTEND DEVELOPER'.includes(valueSearch)) {
+        window.open("/coffeeroasters.html");
+    }
+
+    else if ('FULLSTACK DEVELOPER'.includes(valueSearch)) {
+        window.open("/crowdfund.html");
+    }
+
+    else if ('SENIOR EJB DEVELOPER'.includes(valueSearch)) {
+        window.open("/maker.html");
+    }
+
+    else if ('TECHNICAL LEAD ENGINEER'.includes(valueSearch)) {
+        window.open("/typemaster.html");
+    }
+
+    else if ('HASKELL AND PURESCRIPT DEV'.includes(valueSearch)) {
+        window.open("/blogr.html");
+    }
+
+    else if ('IOS ENGINEER'.includes(valueSearch)) {
+        window.open("/pomodoro.html");
+    }
+
+    else if ('APP & WEBSITE DESIGNER'.includes(valueSearch)) {
+        window.open("/mastercraft.html");
+    }
+    
+}
+
+
+
+// Mobile Filter Search
+
+const mobileSearchBar = document.querySelector('#mobile-btn');
+mobileSearchBar.addEventListener("click", mobileFilter);
+
+const locaSearchBar = document.querySelector('.mb-btn');
+locaSearchBar.addEventListener('click', mobileFilter);
+
+
+function mobileFilter () {
+    let inputS = document.getElementById("fil-mobile");
+    let valueSearch = inputS.value.toUpperCase();
+
+
+    if ('SENIOR SOFTWARE ENGINEER'.includes(valueSearch)) {
+        window.open('/scoot.html')
+    }
+
+    else if ('SENIOR APPLICATION ENGINEER'.includes(valueSearch)) {
+        window.open("/officelite.html");
+    }
+
+    else if ('MIDLEVEL BACK END ENGINEER'.includes(valueSearch)) {
+        window.open("/vector.html");
+    }
+
+    else if ('REMOTE DEVOPS ENGINEER'.includes(valueSearch)) {
+        window.open("/pod.html");
+    }
+
+    else if ('DESKTOP SUPPORT MANAGER'.includes(valueSearch)) {
+        window.open("/creative.html");
+    }
+
+    else if ('SENIOR FRONTEND DEVELOPER'.includes(valueSearch)) {
+        window.open("/coffeeroasters.html");
+    }
+
+    else if ('FULLSTACK DEVELOPER'.includes(valueSearch)) {
+        window.open("/crowdfund.html");
+    }
+
+    else if ('SENIOR EJB DEVELOPER'.includes(valueSearch)) {
+        window.open("/maker.html");
+    }
+
+    else if ('TECHNICAL LEAD ENGINEER'.includes(valueSearch)) {
+        window.open("/typemaster.html");
+    }
+
+    else if ('HASKELL AND PURESCRIPT DEV'.includes(valueSearch)) {
+        window.open("/blogr.html");
+    }
+
+    else if ('IOS ENGINEER'.includes(valueSearch)) {
+        window.open("/pomodoro.html");
+    }
+
+    else if ('APP & WEBSITE DESIGNER'.includes(valueSearch)) {
+        window.open("/mastercraft.html");
+    }
+    
+}
+
+// Load More Button 
+
+
+const loadMore = document.querySelector('.btn-2');
+
+const showNum1 = document.getElementsByClassName('job-card-13');
+const showNum2 = document.getElementsByClassName('job-card-14');
+const showNum3 = document.getElementsByClassName('job-card-15');
+
+
+loadMore.addEventListener('click', mk);
+
+function mk () {
+        showNum1[0].classList.add('show');
+        showNum2[0].classList.add('show');
+        showNum3[0].classList.add('show');
+}
+
+
+
+
+
+
+
+
+
+
 
 
